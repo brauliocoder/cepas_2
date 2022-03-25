@@ -24,7 +24,6 @@
     <div>
       <%= wine_strains_form.number_field :percentage, in: 0..100, step: 0.1 %>
       <%= wine_strains_form.collection_select(:strain_id, Strain.all, :id, :name, { :prompt => 'Selecciona una cepa' }) %>
-      <%# <%= wine_strains_form.collection_select(:strain_id, Strain.where.not(name: @wine.strains.pluck(:name)), :id, :name, prompt: true) %>
     </div>
   <% end %>
 

@@ -5,6 +5,14 @@
   <%= @wine.name %>
 </p>
 
+<ul>
+  <% @wine.strains.order(:name).each do |ws| %>
+    <li>
+      <%= ws.name %> (<%= @wine.wine_strains.find_by(strain_id: ws.id).percentage %>%)
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'Add New', add_new_path(@wine) %>
 <%= link_to 'Edit', edit_wine_path(@wine) %> |
 <%= link_to 'Back', wines_path %>
