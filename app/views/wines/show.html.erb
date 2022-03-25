@@ -5,5 +5,6 @@
   <%= @wine.name %>
 </p>
 
+<%= link_to 'Add New', add_new_path(@wine) %>
 <%= link_to 'Edit', edit_wine_path(@wine) %> |
 <%= link_to 'Back', wines_path %>

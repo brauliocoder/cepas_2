@@ -1,5 +1,5 @@
 class WinesController < ApplicationController
-  before_action :set_wine, only: %i[ show edit update destroy ]
+  before_action :set_wine, only: %i[ show edit add_new update destroy ]
 
   # GET /wines or /wines.json
   def index
@@ -18,7 +18,10 @@ class WinesController < ApplicationController
 
   # GET /wines/1/edit
   def edit
-    # @wine.wine_strains.build.build_strain
+  end
+  
+  def add_new
+    @wine.wine_strains.build.build_strain
   end
 
   # POST /wines or /wines.json
