@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :profiles
   root 'wines#index'
   devise_for :friends
   
