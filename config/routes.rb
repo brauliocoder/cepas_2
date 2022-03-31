@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'wines#index'
+  resources :profiles
+  root 'wines#index'
+  devise_for :friends
   
   resources :strains
   get '/wines/:id/add_new', to: 'wines#add_new', as: 'add_new'
