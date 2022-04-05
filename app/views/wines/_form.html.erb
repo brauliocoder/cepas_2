@@ -15,10 +15,6 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-  
-  <% if @wine.strains.count > 0 %>
-    <%= @wine.strains.count %>
-  <% end %>
 
   <%= form.fields_for :wine_strains do |wine_strains_form| %>
     <div>
@@ -26,6 +22,15 @@
       <%= wine_strains_form.collection_select(:strain_id, Strain.all, :id, :name, { :prompt => 'Selecciona una cepa' }) %>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :score %>
+    <%= form.number_field :score, in: 0..100, step: 0.5 %>
+  </div>
+
+  <div class="field">
+    <%= form.collection_check_boxes :oenologist_ids, Oenologist.all, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

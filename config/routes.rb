@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :oenologists
   root 'wines#index'
   devise_for :friends
   
